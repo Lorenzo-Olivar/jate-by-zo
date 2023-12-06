@@ -20,7 +20,9 @@ If your README is long, add a table of contents to make it easy for users to fin
 
 ## Installation
 
-What are the steps required to install your project? Provide a step-by-step description of how to get the development environment running.
+Check out the deployed site here!
+
+[Just Another Text Editor](https://jate-by-zo-olivar.onrender.com)
 
 ## Usage
 
