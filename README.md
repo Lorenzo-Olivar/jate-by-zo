@@ -2,12 +2,10 @@
 
 ## Description
 
-Provide a short description explaining the what, why, and how of your project. Use the following questions as a guide:
-
-- What was your motivation?
-- Why did you build this project? (Note: the answer is not "Because it was a homework assignment.")
-- What problem does it solve?
-- What did you learn?
+Just Another Text Editor (J.A.T.E) is a text editor that stores code snippets or texts you might keep for yourself.
+This project helped me practice making full-stack applications as installable apps.
+Jate helps me store code that I plan to use in all my projects so I can work smarter and not harder!
+From this project, I learned how to structure my code into a server and client format while learning how to cache my application so I can use the app without the internet.
 
 ## Table of Contents
 
