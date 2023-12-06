@@ -1,6 +1,6 @@
 import { openDB } from 'idb';
 
-const initdb = async () => {
+const initdb = async () =>
   openDB('jate', 1, {
     upgrade(db) {
       if (db.objectStoreNames.contains('jate')) {
@@ -11,52 +11,29 @@ const initdb = async () => {
       console.log('jate database created');
     },
   });
-};
+
 // TODO: Add logic to a method that accepts some content and adds it to the database
 export const putDb = async (content) => {
-  try {
-    console.log('Adding to the jate Database');
-
-    const jateDb = await openDB('jate', 1);
-
-    const tx = jateDb.transaction('jate', 'readwrite');
-
-    const store = tx.objectStore('jate');
-
-    const request =store.add({ jate: content });
-
-    const result = await request;
-
-    console.log('Data was saved to jate Database', result);
-
-  } catch (error) {
-
-    console.error('putDb not implemented', error);
-  }
+  console.log('PUT to the database');
+  const jateDb = await openDB('jate', 1);
+  const tx = jateDb.transaction('jate', 'readwrite');
+  const store = tx.objectStore('jate');
+  const request = store.put({ jate: content });
+  const result = await request;
+  console.log('Data saved to the database', result);
+  return result;
 };
 
 // TODO: Add logic for a method that gets all the content from the database
 export const getDb = async () => {
-  try {
-    console.log('Getting all data from the jate Database');
-
-    const jateDb = await openDB('jate', 1);
-
-    const tx = jateDb.transaction('jate', 'readonly');
-
-    const store = tx.objectStore('jate');
-
-    const request = store.getAll();
-
-    const result = await request;
-
-    console.log('result.value', result);
-
-    return result;
-
-  } catch (error) {
-    console.error('getDb not implemented', error);
-  }
-}
+  console.log('GET all from the database');
+  const jateDb = await openDB('jate', 1);
+  const tx = jateDb.transaction('jate', 'readwrite');
+  const store = tx.objectStore('jate');
+  const request = store.getAll();
+  const result = await request;
+  console.log('result.value', result);
+  return result;
+};
 
 initdb();
