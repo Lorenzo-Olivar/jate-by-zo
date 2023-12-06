@@ -3,7 +3,7 @@ const WebpackPwaManifest = require('webpack-pwa-manifest');
 const path = require('path');
 const { InjectManifest } = require('workbox-webpack-plugin');
 
-// TODO: Add and configure workbox plugins for a service worker and manifest file. [...]
+// TODO: Add and configure workbox plugins for a service worker and manifest file. [done]
 // TODO: Add CSS loaders and babel to webpack. [done]
 
 module.exports = () => {
@@ -21,9 +21,27 @@ module.exports = () => {
       new HtmlWebpackPlugin({
         template: './index.html',
       }),
+
       new InjectManifest({
         swSrc: './src-sw.js',
         swDest: 'service-worker.js',
+      }),
+
+      new WebpackPwaManifest({
+        name: 'Just Another Test Editor by Zo',
+        short_name: 'J.A.T.E',
+        description: 'Takes notes with JavaScript syntax highlighting!',
+        background_color: '#225ca3',
+        theme_color: '#225ca3',
+        start_url: './',
+        orientation: 'portrait',
+        display: 'standalone',
+        icons: [
+          {
+            src: path.resolve('src/images/logo.png'),
+            sizes: '512x512',
+          },
+        ],
       }),
     ],
 
