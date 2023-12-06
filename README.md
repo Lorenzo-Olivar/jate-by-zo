@@ -22,13 +22,7 @@ Check out the deployed site here!
 
 ## Usage
 
-Provide instructions and examples for use. Include screenshots as needed.
-
-To add a screenshot, create an `assets/images` folder in your repository and upload your screenshot to it. Then, using the relative filepath, add it to your README using the following syntax:
-
-    ```md
-    ![alt text](assets/images/screenshot.png)
-    ```
+[Jate-by-zo.webm](https://github.com/Lorenzo-Olivar/jate-by-zo/assets/131014446/7bd14086-c141-40aa-8598-c549542ddd98)
 
 ## Credits
 
